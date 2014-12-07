@@ -1,0 +1,88 @@
+Overview of GCC global types and macros used in tutorial.
+---------------------------------------------------------
+
+DECL_IS_BUILTIN - 
+
+This just focuses in on the file being compiled and ignores the GCC AST (Abstract Syntax Tree) implicit declarations for RTTI, exceptions, and static construction/destruction support code and compiler builtin declarations.
+
+PLUGIN_FINISH_UNIT - 
+
+PLUGIN_OVERRIDE_GATE - 
+
+Event which will allow you to see all the passes that are being executed. This is called before every pass.
+
+HOST_BIT_BUCKET -
+
+Is defined as "/dev/null"
+
+error_count -
+
+Number of compilation errors
+
+main_input_filename -
+
+Name of the file being compiled
+
+global_namespace -
+
+The root of the AST
+
+tree_code_name -
+
+Is an array of strings containing human-readable tree code names
+
+TYPE_DECL -
+
+type declaration
+
+VAR_DECL -
+
+variable declaration
+
+ARRAY_TYPE -
+
+array type 
+
+RECORD_TYPE - 
+
+class/struct type
+
+TREE_CHAIN -
+
+Macro that transverses the tree nodes, which are linked together by a linked list
+
+DECL_NAME -
+
+Declaration names
+
+IDENTIFIER_NODE -
+
+Retrieves the node type
+
+TREE_TYPE -
+
+Returns the tree node (with one of the *_TYPE tree codes) corresponding to the type of entity being declared
+
+DECL_SOURCE_FILE - 
+
+Returns the file name of the declaration source
+
+DECL_SOURCE_LINE -
+
+Returns the line number of the declaration source.
+
+cp_namespace_decls - 
+
+Returns declartions from namespaces
+
+cp_binding_level -
+
+Includes nested namespaces
+
+location_t -
+
+Storing file/line/column information with each tree node would require too much memory so instead GCC stores an instance of the location_t type (currently defined as unsigned int) in tree nodes. The location_t values consist of three bit-fields: the index into the line map, line offset, and column number.
+
+CP_DECL_CONTEXT - 
+
+Recreates the original namespace hierarchy, the namespace information is inferred from declaration nodes.
